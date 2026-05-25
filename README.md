@@ -1,12 +1,18 @@
-# wp_galerie
-Optimisation du bloc galerie par default de wp avec Masonry et GLightBox
-
-
 # Gallery — Masonry + GLightbox
 
 Transforme automatiquement tous les blocs **Galerie natifs WordPress**
-en grille Masonry responsive avec lightbox GLightbox.
-Aucune classe CSS manuelle requise sur les blocs.
+(`wp-block-gallery`) en grille Masonry responsive avec lightbox GLightbox.
+Aucune classe CSS manuelle requise sur les blocs — le JS reconstruit
+entièrement le DOM à partir du markup natif WP.
+
+## Bloc cible
+
+| Bloc WordPress | Classe générée | Colonnes par défaut |
+|---|---|---|
+| Galerie (`/gallery`) | `.wp-block-gallery` | **6 colonnes** |
+
+> Les colonnes définies dans l'éditeur WordPress sont ignorées —
+> c'est Masonry + CSS qui gèrent la disposition.
 
 ## Libs utilisées
 
