@@ -1,0 +1,81 @@
+/**
+ * Gallery — Masonry + GLightbox
+ *
+ * @description Styles pour la grille Masonry sur le bloc Galerie WordPress.
+ *              6 colonnes par défaut, classes utilitaires pour 2 et 4 colonnes,
+ *              responsive jusqu'au mobile.
+ *
+ * @classes     .jll-2-colonnes  → forcer 2 colonnes sur le bloc
+ *              .jll-4-colonnes  → forcer 4 colonnes sur le bloc
+ *
+ * @author      Ton Nom
+ * @version     1.0.0
+ */
+
+/* ── Reset layout natif WP ────────────────────────────────────────────────── */
+.wp-block-gallery {
+  display: block !important;
+}
+
+/* ── Grille Masonry — 6 colonnes par défaut ───────────────────────────────── */
+.wp-block-gallery .masonry-grid {
+  width: 100%;
+}
+
+.wp-block-gallery .masonry-grid-sizer,
+.wp-block-gallery .masonry-item {
+  width: calc(16.666% - 14px); /* 100/6 - gutter */
+}
+
+.wp-block-gallery .masonry-item {
+  margin-bottom: 16px;
+}
+
+.wp-block-gallery .masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: opacity .2s;
+}
+
+.wp-block-gallery .masonry-item a:hover img {
+  opacity: .85;
+}
+
+/* ── Classes utilitaires colonnes ─────────────────────────────────────────── */
+
+/* 2 colonnes */
+.wp-block-gallery.jll-2-colonnes .masonry-grid-sizer,
+.wp-block-gallery.jll-2-colonnes .masonry-item {
+  width: calc(50% - 16px);
+}
+
+/* 4 colonnes */
+.wp-block-gallery.jll-4-colonnes .masonry-grid-sizer,
+.wp-block-gallery.jll-4-colonnes .masonry-item {
+  width: calc(25% - 16px);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .wp-block-gallery .masonry-grid-sizer,
+  .wp-block-gallery .masonry-item {
+    width: calc(25% - 12px); /* 4 colonnes */
+  }
+}
+
+@media (max-width: 768px) {
+  .wp-block-gallery .masonry-grid-sizer,
+  .wp-block-gallery .masonry-item {
+    width: calc(33.333% - 11px); /* 3 colonnes */
+  }
+}
+
+@media (max-width: 480px) {
+  .wp-block-gallery .masonry-grid-sizer,
+  .wp-block-gallery .masonry-item {
+    width: calc(50% - 8px); /* 2 colonnes */
+  }
+}
